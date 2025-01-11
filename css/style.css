@@ -1,9 +1,24 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+    background-color: #FFFFF;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-image: url('../assets/landing-banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 
 h1 {
     color: #333;
@@ -38,13 +53,156 @@ button {
     box-sizing: border-box;
 }
 
-button {
-    background: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-button:hover {
-    background: #218838;
+header.scrolled {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    padding: 0 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container img {
+    margin-left: 20rem;
+}
+
+img {
+    width: 48px;
+    height: 48px;
+}
+
+
+.nav-centro {
+    display: flex;
+    align-items: center;
+    width: 60%;
+} 
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-left: 3rem;
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #CED6E0;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #6576FF;
+    transition: color 0.3s ease-in-out;
+}
+
+header.scrolled nav ul li a {
+    color: black;
+}
+
+header div.btn-center { 
+    margin-top: 9px;
+    align-items: center;
+}
+
+header .button-header {
+    width: 120px;
+    height: 40px;
+    margin-left: 3rem;
+    align-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out background 0.3s ease-in-out;
+}
+
+header .button-header:hover {
+    background: #6576FF;
+    color: white;
+}
+
+main {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h5 {
+    font-size: 0.6rem;
+    color: #6576FF;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+main h1 {
+    margin-top: -0.2rem;
+    font-size: 3rem;
+    color: white;
+    font-weight: 700;
+}
+
+main p {
+    margin-top: -0.8rem;
+    max-width: 40rem;
+    text-align: center; 
+    line-height: 1.5;
+    color: #E5E9F2;
+}
+
+.main-buttons {
+    margin-top: 1rem;
+    display: flex; 
+    gap: 1.5rem;
+}
+
+main .main-buttons button {
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+main .main-buttons button:first-child {
+    background-color: #6576FF;
+    transition: color 0.2s;
+}
+
+main .main-buttons button:first-child:hover {
+    background-color:rgb(84, 103, 251);
+}
+
+main .main-buttons button:last-child {
+    background-color: #E85347;
+    transition: color 0.2s;
+}
+
+main .main-buttons button:last-child:hover {
+    background-color:rgb(230, 61, 49);
+}
+
+main .techs {
+    margin-top: 1rem;
+    display: flex;
+    gap: -0.4rem;
 }

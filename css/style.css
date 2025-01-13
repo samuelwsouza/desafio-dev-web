@@ -64,6 +64,25 @@ header {
     z-index: 1000;
 }
 
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.hamburguer span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
 header.scrolled {
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,9 +90,8 @@ header.scrolled {
 
 .container {
     display: flex;
-    padding: 0 2%;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container img {
@@ -92,9 +110,11 @@ img {
     width: 60%;
 } 
 
-nav ul {
+.nav-centro ul {
+    list-style: none;
     display: flex;
-    list-style-type: none;
+    gap: 20px;
+    padding: 7px 0;
 }
 
 nav ul li {
@@ -115,28 +135,12 @@ nav ul li a:hover {
     transition: color 0.3s ease-in-out;
 }
 
+.nav-centro li a.active {
+    color: aqua;
+}
+
 header.scrolled nav ul li a {
     color: black;
-}
-
-header div.btn-center { 
-    margin-top: 9px;
-    align-items: center;
-}
-
-header .button-header {
-    width: 120px;
-    height: 40px;
-    margin-left: 3rem;
-    align-content: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: color 0.3s ease-in-out background 0.3s ease-in-out;
-}
-
-header .button-header:hover {
-    background: #6576FF;
-    color: white;
 }
 
 main {
@@ -185,6 +189,7 @@ main .main-buttons button {
 
 main .main-buttons button:first-child {
     background-color: #6576FF;
+    text-decoration: none;
     transition: color 0.2s;
 }
 
@@ -206,3 +211,248 @@ main .techs {
     display: flex;
     gap: -0.4rem;
 }
+
+main#form-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main#form-cadastro form {
+    width: 40rem;
+    height: 20rem;
+}
+
+main#form-cadastro form button[type="submit"] {
+    margin-top: 1rem;
+    background: black;
+    font-weight: bold;
+    color: white;
+    outline: 0;
+    height: 40px;
+    border-radius: 20px;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+main#form-cadastro form button[type="submit"]:hover {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+main#listagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 8rem auto;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+main#listagem h1 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #495057;
+}
+
+table#usuarios_listados {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    border: 1px solid #dee2e6;
+}
+
+table#usuarios_listados thead tr {
+    background-color: #6c757d;
+    color: #ffffff;
+    text-align: left;
+}
+
+table#usuarios_listados th,
+table#usuarios_listados td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table#usuarios_listados tbody tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+table#usuarios_listados tbody tr:last-of-type {
+    border-bottom: 2px solid #6c757d;
+}
+
+table#usuarios_listados tbody td button {
+    background:black; 
+    color: white;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: background-color 0.2s color 0.2s ease-in-out;
+}
+
+table#usuarios_listados tbody td button:hover {
+    background:white; 
+    color: black;
+}
+
+#editarModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#editarModal .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+#editarModal .modal-content form  {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: start;
+}
+
+#editarModal .modal-content form .save-btn  {
+    background:black; 
+    color: white;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: background-color 0.2s color 0.2s ease-in-out;
+}
+
+#editarModal .modal-content form .save-btn:hover  {
+    background:white; 
+    color: black;
+}
+
+#editarModal .modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    #header .nav-centro ul, #header img {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .hamburguer {
+    display: flex;
+  }
+
+  .nav-centro.active ul {
+    display: flex;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  header nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  table th, table td {
+    font-size: 0.9rem;
+  }
+
+  button, a[title="Excluir"] {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    gap: 10px;
+  }
+
+  form input, form button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+    table#usuarios_listados {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  table {
+    font-size: 0.7rem;
+  }
+
+  table th, table td {
+    padding: 5px;
+  }
+
+  form input, form button {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .modal-content {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+
+

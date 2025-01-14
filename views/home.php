@@ -21,7 +21,7 @@ include 'header.php'
   <main>
     <h5>Introduzindo</h5>
     <h1>Desafio Web Júnior</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iste maiores voluptatum mollitia dolorum ipsam excepturi nisi? Laborum aliquam, vel quasi tenetur voluptatibus quod consequuntur quam nobis dolore, ducimus ea!</p>
+    <p>Este projeto demonstra minhas habilidades em desenvolvimento backend, integração com banco de dados e criação de interfaces responsivas. Ele permite realizar operações básicas de CRUD (Criar, Ler, Atualizar, Excluir) de maneira eficiente e intuitiva.</p>
     <div class="main-buttons">
       <button class="table-btn" onclick="location.href='/sistema-cadastro/listagem'">Ir para a Table</button>
       <button class="linkedin-btn" onclick="location.href='https://www.linkedin.com/in/samuel-willians-de-souza-444a6a1b4/'">LinkedIn</button>

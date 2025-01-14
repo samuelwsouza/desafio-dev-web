@@ -1,21 +1,25 @@
-// header branco ao scrollar
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('#header');
-  if (window.scrollY > 50) {
-    header.style.backgroundColor = 'white';
-    header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-  } else {
-    header.style.backgroundColor = 'transparent';
-    header.style.boxShadow = 'none';
-  }
-});
-
 // hamburguer
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburguer = document.getElementById('hamburguer');
-  const navCentro = document.querySelector('.nav-centro');
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburguer = document.getElementById("hamburguer");
+  const navMenu = document.querySelector(".nav-centro");
 
-  hamburguer.addEventListener('click', () => {
-    navCentro.classList.toggle('active');
+  hamburguer.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
   });
-})
+
+  // biome-ignore lint/complexity/noForEach: <explanation>
+    navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
+  });
+
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+});
